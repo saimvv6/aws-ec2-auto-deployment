@@ -1,3 +1,4 @@
+YAML
 name: Deploy EC2 via Terraform
 
 on:
