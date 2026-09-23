@@ -8,16 +8,7 @@ on:
       - 'variables.tf'
 
 permissions:
-  id-token: write   # AWS OIDC కి కనెక్ట్ అవ్వడానికి ఇది తప్పనిసరి!
-  contents: read
-
-jobs:
-  terraform-deploy:
-    runs-on: ubuntu-latest
-# ... (మిగతా కోడ్ అంతా సేమ్)
-
-permissions:
-  id-token: write # OIDC authentication ki idi chala important
+  id-token: write
   contents: read
 
 jobs:
