@@ -1,35 +1,27 @@
-YAML
 name: Deploy EC2 via Terraform
-
 on:
   push:
     branches:
       - main
     paths:
       - 'variables.tf'
-
 permissions:
   id-token: write
   contents: read
-
 jobs:
   terraform-deploy:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Repository
         uses: actions/checkout@v3
-
       - name: Configure AWS Credentials using OIDC
         uses: aws-actions/configure-aws-credentials@v3
         with:
           role-to-assume: arn:aws:iam::116981762429:role/GitHubActions-EC2-Deploy-Role
           aws-region: us-east-1
-
       - name: Setup Terraform
         uses: hashicorp/setup-terraform@v2
-
       - name: Terraform Init
         run: terraform init
-
       - name: Terraform Apply
         run: terraform apply -auto-approve
