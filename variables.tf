@@ -1,7 +1,7 @@
 variable "ami_id" {
   description = "The AMI ID for the EC2 instance"
   type        = string
-  # Example: "ami-0e86e20dae9224db8" (us-east-1 region ki)
+  # Example: "ami-0e86e20dae9224db8" (us-east-1 )
   default     = "ami-0e86e20dae9224db8" 
 }
 
